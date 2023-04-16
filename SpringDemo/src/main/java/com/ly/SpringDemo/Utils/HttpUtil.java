@@ -1,16 +1,10 @@
 package com.ly.SpringDemo.Utils;
 
-
 import okhttp3.*;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.URL;
 import java.util.HashMap;
 
 public class HttpUtil {
     public static MediaType MediaType_UrlEncoded = MediaType.parse("application/x-www-form-urlencoded");
-//    public static MediaType MediaType_Json = MediaType.parse("application/json");
     private static OkHttpClient httpClient = new OkHttpClient();
 
     private static String getURLEncodedFromMap(HashMap<String, String> params) {
