@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     public List<User> query(int page, int size) {
-        Query query = new Query().skip(page).limit(size);
+        Query query = new Query().skip(page * size).limit(size);
         List<User> users = mongoTemplate.find(query, User.class);
         return users;
     }

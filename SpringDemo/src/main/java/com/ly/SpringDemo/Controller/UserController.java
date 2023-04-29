@@ -21,6 +21,9 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, path = "/user/create")
     Map dbInsert(@RequestParam String name) {
         try {
+            if (name.length() < 1) {
+                return new SResponse(-2, "please input a name", null).toMap();
+            }
             userDao.insert(name, 0);
             return new SResponse(0, "success", null).toMap();
         } catch (Exception e) {
